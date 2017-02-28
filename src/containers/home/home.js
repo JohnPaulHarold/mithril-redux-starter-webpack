@@ -18,6 +18,9 @@ const Home = {
       m('p',
         m('a', { href: '/counter', config: m.route }, [
           'Counter ', m('i.fa.fa-arrow-right'),
+        ]),
+        m('a', { href: '/artists', config: m.route }, [
+          'Artists ', m('i.fa.fa-arrow-right'),
         ])
       ),
     ]);
