@@ -4,8 +4,11 @@ import { connect } from '../../store';
 import { updateTitle } from '../../actions/page';
 import mReduxImage from '../../img/m-redux.png';
 
+console.log('HOME:');
+
 const Home = {
-  view(ctrl, props) {
+  view(vnode) {
+    console.log('HOME: vnode %o', vnode);
     const { title, actions } = props;
 
     return m('.Home', [
