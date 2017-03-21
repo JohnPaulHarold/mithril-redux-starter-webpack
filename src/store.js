@@ -3,7 +3,7 @@ import thunk from 'redux-thunk';
 
 import { count } from './reducers/counter';
 import { page } from './reducers/page';
-import { artists } from './reducers/artists';
+import { things } from './reducers/things';
 
 
 const middleware = [
@@ -17,7 +17,7 @@ if (process.env.NODE_ENV !== 'production') {
 export const store = configureStore({
   page,
   count,
-  artists,
+  things,
 }, middleware);
 
 export const connect = connectStore(store);

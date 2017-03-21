@@ -9,7 +9,7 @@ console.log('HOME:');
 const Home = {
   view(vnode) {
     console.log('HOME: vnode %o', vnode);
-    const { title, actions } = props;
+    const { title, actions } = vnode.attrs;
 
     return m('.Home', [
       m('img', { src: mReduxImage, alt: 'Mithril Redux' }),
@@ -19,11 +19,11 @@ const Home = {
         value: title,
       }),
       m('p',
-        m('a', { href: '/counter', config: m.route }, [
+        m('a', { href: '/counter', oncreate : m.route.link }, [
           'Counter ', m('i.fa.fa-arrow-right'),
         ]),
-        m('a', { href: '/artists', config: m.route }, [
-          'Artists ', m('i.fa.fa-arrow-right'),
+        m('a', { href: '/things', oncreate : m.route.link }, [
+          'Things ', m('i.fa.fa-arrow-right'),
         ])
       ),
     ]);

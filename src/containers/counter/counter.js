@@ -5,14 +5,15 @@ import { connect } from '../../store';
 import { addCount } from '../../actions/counter';
 
 const Counter = {
-  view(ctrl, props) {
-    const { actions, count } = props;
+  view(vnode) {
+    console.log('Counter:view vnode %o', vnode);
+    const { actions, count } = vnode.attrs;
 
     return m('.Counter', [
       m('h1', `${count} clicked`),
       m('button', { onclick: actions.addCount }, 'click me'),
       m('p',
-        m('a', { href: '/', config: m.route }, [
+        m('a', { href: '/', oncreate : m.route.link }, [
           'Home ', m('i.fa.fa-arrow-left'),
         ])
       ),
